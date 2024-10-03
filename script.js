@@ -1,18 +1,22 @@
 function functionOne(){
-    let list = document.querySelectorAll("#zad1 li");
-    let hidden = document.querySelectorAll(".hidden");
+    const inputLength = 5;
+    let list = document.querySelector("#list");
+    let hidden = document.querySelector("#hidden");
+    let listTemplate = "<ol id=\"zad1\">";
     let interests = [];
-    for (let i = 0; i < list.length; i++){
-        let message = prompt(`Podaj swoje zainteresowania (${i+1}/${list.length}):`);
+    //Push user input as elements of the array
+    for (let i = 0; i < inputLength; i++){
+        let message = prompt(`Podaj swoje zainteresowania (${i+1}/${inputLength}):`);
         interests.push(message);
     }
-    console.log(list.length);
+    //Create list elements and concatenate elements of interests array
     for (let i = 0; i < interests.length; i++){
-        list[i].innerHTML = interests[i];
+        listTemplate += "<li>" + interests[i] + "</li>";
     }
-    for (let i = 0; i < hidden.length; i++){
-        hidden[i].style.visibility = "visible";
-    }
+    //Create list in HTML document and set title paragraph as visible
+    listTemplate += "</ol>";
+    list.innerHTML = listTemplate;
+    hidden.style.visibility = "visible";
 
 }
 
@@ -28,7 +32,7 @@ function functionTwo(){
 
 function functionThree(){
     $("button#3").fadeOut(2000, function() {
-        $(this).css("color", "red").delay(5000).fadeIn(2000);
+        $(this).css({"color": "red", "background-color": "yellow"}).delay(5000).fadeIn(2000);
     });
 
 }
