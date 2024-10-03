@@ -1,7 +1,7 @@
 function functionOne(){
     const inputLength = 5;
     let list = document.querySelector("#list");
-    let hidden = document.querySelector("#hidden");
+    let hidden = document.querySelector("p#zad1");
     let listTemplate = "<ol id=\"zad1\">";
     let interests = [];
     //Push user input as elements of the array
